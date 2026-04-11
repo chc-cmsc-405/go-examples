@@ -11,6 +11,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -90,5 +91,9 @@ func main() {
 	fmt.Println("  GET    curl http://localhost:8080/services")
 	fmt.Println("  POST   curl -X POST -d '{\"name\":\"Netflix\",\"url\":\"https://netflix.com\"}' http://localhost:8080/services")
 	fmt.Println("  DELETE curl -X DELETE 'http://localhost:8080/services?name=Google'")
-	http.ListenAndServe(":8080", nil)
+	fmt.Println("Press Ctrl+C to stop")
+
+	// log.Fatal prints an error and exits if the server can't start
+	// (e.g., port 8080 is already in use by another program).
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }

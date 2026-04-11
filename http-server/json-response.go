@@ -11,6 +11,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -62,5 +63,7 @@ func main() {
 	fmt.Println("  http://localhost:8080/services")
 	fmt.Println("Press Ctrl+C to stop")
 
-	http.ListenAndServe(":8080", nil)
+	// log.Fatal prints an error and exits if the server can't start
+	// (e.g., port 8080 is already in use by another program).
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }

@@ -5,10 +5,15 @@
 // register a handler function for a URL path, then start listening.
 // Compare to Java (Spring Boot + annotations + config) or Python
 // (Flask/Django + setup). Go's net/http package does it all directly.
+//
+// Note: log.Fatal wraps ListenAndServe so you see an error if the server
+// can't start (e.g., port 8080 is already in use by another program).
+// Without it, the server would silently fail to start.
 package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -37,5 +42,5 @@ func main() {
 	// ListenAndServe blocks — the program runs forever, handling requests,
 	// until you stop it. The ":8080" means "listen on port 8080 on all
 	// network interfaces." The nil means "use the default request router."
-	http.ListenAndServe(":8080", nil)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
