@@ -13,6 +13,8 @@ cd collections
 go run maps-basics.go
 ```
 
+**Important:** Use `go run filename.go` (not `go run .`). Each folder has multiple standalone programs — running `go run .` will fail because Go sees multiple `main` functions. This also causes red underlines in VS Code — those are cosmetic, not real errors. Your code runs fine with `go run filename.go`.
+
 ## Folders
 
 ```
