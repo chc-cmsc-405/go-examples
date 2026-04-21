@@ -22,6 +22,9 @@ basics/          # Variables, types, printing, hello world
 functions/       # Functions, multiple returns, error handling, defer
 http-server/     # HTTP handlers, JSON encode/decode, method routing, timeouts
 collections/     # Maps, slices, arrays, filtering, iteration
+structs/         # Struct definitions, methods, value vs pointer receivers
+interfaces/      # Implicit satisfaction, polymorphism, analyzer patterns
+composition/     # Struct embedding, method promotion, factory functions
 ```
 
 New files are added to existing folders each week. Pull the latest to get new examples:
