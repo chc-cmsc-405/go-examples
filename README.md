@@ -25,6 +25,7 @@ collections/     # Maps, slices, arrays, filtering, iteration
 structs/         # Struct definitions, methods, value vs pointer receivers
 interfaces/      # Implicit satisfaction, polymorphism, analyzer patterns
 composition/     # Struct embedding, method promotion, factory functions
+strings/         # Split, Index, Fields, Count — patterns for parsing text
 ```
 
 New files are added to existing folders each week. Pull the latest to get new examples:
